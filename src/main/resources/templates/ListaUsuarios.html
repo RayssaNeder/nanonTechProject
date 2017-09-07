@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Lista de Convidados</title>
+	<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../css/app.css" th:href="@{/css/app.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">Usuarios</h1>
+		</div>
+		<div class="panel-body">
+		
+			<form class="form-inline" method="POST" style="margin: 20px 0" th:object="${usuario}" th:action="@{/usuarios}">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Nome" th:field="*{nome}"/>
+					<input type="text" class="form-control" placeholder="CPF" th:field="*{cpf}"/>
+					<button type="submit" class="btn btn-primary">Adicionar</button>
+				</div>
+			</form>
+			
+			
+			
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Acompanhantes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="usuario : ${usuarios}">
+						<td th:text="${usuario.nome}"></td>
+						<td th:text="${usuario.cpf}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
