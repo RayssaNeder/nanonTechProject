@@ -72,11 +72,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
 			<version>10.2.0.5.0</version>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>
